@@ -4,7 +4,46 @@ public class SortArraryof012 {
 	public static void main(String[] args) {
 		int arr [] = {1,2,1,0};
 		int size = arr.length;
-		sortArray(arr, size);
+        sortArray(arr, size);
+		sortArraywithSwap(arr,size);
+		logArray(arr, size);
+	}
+
+	private static void sortArraywithSwap(int[] arr, int size) {
+
+		int low =0, mid =0, high=size-1,temp=0;
+		
+		while (mid<=high) {
+			
+			switch (arr[mid]) {
+			
+			case 0: {
+				
+				temp =arr[low];
+				arr[low]=arr[mid];
+				arr[mid]=temp;
+				low++;
+				mid++;
+				break;
+			}
+			case 1: { mid++; break;}
+			
+			case 2: {
+				
+				temp=arr[high];
+				arr[high]=arr[mid];
+				arr[mid]=temp;
+				high--;
+				break;
+			}
+			
+			}
+			
+			
+		}
+		
+		
+		
 	}
 
 	private static void sortArray(int[] arr, int size) {

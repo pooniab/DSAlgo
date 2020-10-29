@@ -9,11 +9,14 @@ public class CountOccuranceofWords {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String str = "hate love hate Java I Test";
+		String str = " Java is a a programming language";
 		HashMap<String, Integer> h1 = new HashMap<String, Integer>();
 		Pattern p1 = Pattern.compile("\\s");
 		String [] temp = p1.split(str);
 		
+		if (temp.length<=0) {
+			System.out.println("string is blank");
+		}
 		for (int i=0;i<temp.length;i++) {
 			if (h1.containsKey(temp[i]))
 			{
@@ -29,13 +32,14 @@ public class CountOccuranceofWords {
 		for (Map.Entry <String,Integer> it : h1.entrySet()) {
 			if (it.getValue()==2) {
 				res++;
-				System.out.println("Repeated string is ::" + it.getKey()+ "and count is : " + res);
-
-			
+				System.out.println("Repeated string is ::" + it.getKey()+ " and count is : " + res);
+				return;
 			}
+			
+				
 				
 		}
-
+		System.out.println("No words is repeated");
 	
 	
 	
